@@ -1,0 +1,9 @@
+theme: jekyll-theme-cayman
+title: LYI Monolith API Documentation
+description: API and model documentation for the LYI Monolith application
+show_downloads: false
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+baseurl: /lyi-monolith 

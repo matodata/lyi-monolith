@@ -15,6 +15,7 @@ This is a standard Spring Boot application with the following structure:
 src/main/java/com/matodata/lyi/      - Java source files
 src/main/resources/                  - Configuration files and static resources
 src/test/                            - Test files
+docs/                                - Documentation (published as GitHub Pages)
 ```
 
 ## Running the Application
@@ -52,6 +53,19 @@ The application will start on port 8080 by default.
 ```
 
 The resulting JAR file will be in `build/libs/` directory.
+
+## Documentation
+
+The API and database model documentation is available in the `docs` directory and is published as GitHub Pages.
+
+To view the documentation:
+1. Navigate to `https://[your-github-username].github.io/lyi-monolith/`
+2. View the API documentation at `/apis.html` 
+3. View the database model documentation at `/models.html`
+
+To update the documentation:
+1. Edit the files in the `docs` directory
+2. Commit and push your changes to trigger the GitHub Pages workflow
 
 ## Database
 

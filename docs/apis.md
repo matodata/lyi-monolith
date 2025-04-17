@@ -19,10 +19,27 @@ This document outlines the RESTful API endpoints for the LYI Monolith applicatio
 
 ## Authentication
 
-### Login
+### Google SSO Login
+- **URL**: `/api/auth/google/login`
+- **Method**: `GET`
+- **Description**: Initiates Google OAuth 2.0 authentication flow
+- **Response**: Redirects to Google authentication page
+
+### Google SSO Callback
+- **URL**: `/api/auth/google/callback`
+- **Method**: `GET`
+- **Description**: Callback endpoint for Google OAuth 2.0 authentication
+- **Query Parameters**:
+  - `code`: Authorization code from Google
+  - `state`: State parameter for CSRF protection
+- **Response**: Redirects to the application with a JWT token in the URL hash fragment
+- **Response Example**:
+  - Redirects to: `/#/auth?token=<JWT_TOKEN>`
+
+### Traditional Login
 - **URL**: `/api/auth/login`
 - **Method**: `POST`
-- **Description**: Authenticate a user and return a JWT token
+- **Description**: Authenticate a user via username/password and return a JWT token
 - **Request Body**:
 ```json
 {
@@ -37,6 +54,25 @@ This document outlines the RESTful API endpoints for the LYI Monolith applicatio
   "userId": "string",
   "username": "string",
   "role": "string"
+}
+```
+
+### Verify Token
+- **URL**: `/api/auth/verify`
+- **Method**: `GET`
+- **Description**: Verify a token and retrieve user information
+- **Authorization**: Bearer Token
+- **Response**:
+```json
+{
+  "userId": "string",
+  "username": "string",
+  "email": "string",
+  "role": "string",
+  "firstName": "string",
+  "lastName": "string",
+  "authProvider": "string",
+  "isValid": "boolean"
 }
 ```
 

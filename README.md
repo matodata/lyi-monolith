@@ -1,4 +1,76 @@
-# lyi-monolith
+# LYI Monolith
+
+Spring Boot monolith application for the LYI project.
+
+## Setup Requirements
+
+- Java 17 or higher
+- Gradle (or use the included Gradle wrapper)
+
+## Project Structure
+
+This is a standard Spring Boot application with the following structure:
+
+```
+src/main/java/com/matodata/lyi/      - Java source files
+src/main/resources/                  - Configuration files and static resources
+src/test/                            - Test files
+```
+
+## Running the Application
+
+To build and run the application:
+
+```bash
+# Using Gradle wrapper
+./gradlew bootRun
+
+# Or if you have Gradle installed
+gradle bootRun
+```
+
+The application will start on port 8080 by default.
+
+## Development
+
+### Building the project
+
+```bash
+./gradlew build
+```
+
+### Running tests
+
+```bash
+./gradlew test
+```
+
+### Creating a production build
+
+```bash
+./gradlew bootJar
+```
+
+The resulting JAR file will be in `build/libs/` directory.
+
+## Database
+
+The application is configured to use H2 in-memory database for development purposes.
+The H2 console is enabled and can be accessed at `http://localhost:8080/h2-console` when the application is running.
+
+Database connection details (for development):
+- JDBC URL: `jdbc:h2:mem:lyidb`
+- Username: `sa`
+- Password: `password`
+
+## Technologies
+
+- Spring Boot 3.2.3
+- Spring Web
+- Spring Data JPA
+- H2 Database (for development)
+- Lombok
+- Java 17
 
 ## Requirement
 
